@@ -9,7 +9,7 @@ const userService = require("./user.service");
  * tags:
  *  name: MainData
  *  description: This is for the main data
- * /api/authenticate:
+ * /users/authenticate:
  *  post:
  *      tags: [MainData]
  *      requestBody:
@@ -19,12 +19,12 @@ const userService = require("./user.service");
  *                  schema:
  *                      type: object
  *                      properties:
- *                          email:
+ *                          username:
  *                              type: string
- *                              default: coder
+ *                              default: ammarganja
  *                          password:
  *                              type: string
- *                              default: coder123
+ *                              default: Ammar@123
  *      responses:
  *          default:
  *              description: This is the default response for it
@@ -36,7 +36,7 @@ router.post("/authenticate", authenticate);
  * tags:
  *  name: MainData
  *  description: This is for the main data
- * /api/register:
+ * /users/register:
  *  post:
  *      tags: [MainData]
  *      requestBody:
@@ -46,12 +46,18 @@ router.post("/authenticate", authenticate);
  *                  schema:
  *                      type: object
  *                      properties:
- *                          email:
+ *                          firstName:
  *                              type: string
- *                              default: coder
+ *                              default: ammar
+ *                          lastName:
+ *                              type: string
+ *                              default: ganja
+ *                          username:
+ *                              type: string
+ *                              default: ammarganja
  *                          password:
  *                              type: string
- *                              default: coder123
+ *                              default: Ammar@123
  *      responses:
  *          default:
  *              description: This is the default response for it
