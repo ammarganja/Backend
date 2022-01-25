@@ -7,11 +7,11 @@ const userService = require("./user.service");
 /**
  * @swagger
  * tags:
- *  name: MainData
+ *  name: userauth
  *  description: This is for the main data
  * /users/authenticate:
  *  post:
- *      tags: [MainData]
+ *      tags: [userauth]
  *      requestBody:
  *          required: true
  *          content:
@@ -34,11 +34,11 @@ router.post("/authenticate", authenticate);
 /**
  * @swagger
  * tags:
- *  name: MainData
+ *  name: userauth
  *  description: This is for the main data
  * /users/register:
  *  post:
- *      tags: [MainData]
+ *      tags: [userauth]
  *      requestBody:
  *          required: true
  *          content:
@@ -64,10 +64,83 @@ router.post("/authenticate", authenticate);
  */
 
 router.post("/register", register);
+
+/**
+ * @swagger
+ * tags:
+ *  name: userauth
+ *  description: This is for the main data
+ * /users:
+ *  get:
+ *      tags: [userauth]
+ *      responses:
+ *          default:
+ *              description: This is the default response for it
+ */
 router.get("/", getAll);
+
+/**
+ * @swagger
+ * tags:
+ *  name: userauth
+ *  description: This is for the main data
+ * /users/current:
+ *  get:
+ *      tags: [userauth]
+ *      responses:
+ *          default:
+ *              description: This is the default response for it
+ */
 router.get("/current", getCurrent);
+
+/**
+ * @swagger
+ * tags:
+ *  name: userauth
+ *  description: This is for the main data
+ * /users/{:id}:
+ *  get:
+ *      tags: [userauth]
+ *      responses:
+ *          default:
+ *              description: This is the default response for it
+ */
 router.get("/:id", getById);
+
+/**
+ * @swagger
+ * tags:
+ *  name: userauth
+ *  description: This is for the main data
+ * /users/{:id}:
+ *  put:
+ *      tags: [userauth]
+ *      responses:
+ *          default:
+ *              description: This is the default response for it
+ */
 router.put("/:id", update);
+
+/**
+ * @swagger
+ * tags:
+ *  name: userauth
+ *  description: This is for the main data
+ * /users/{id}:
+ *  delete:
+ *      tags: [userauth]
+ *      content:
+ *              parameters:
+ *                          -name: id
+ *                          in: path
+ *                          required: true
+ *                          schema:
+ *                          type : integer
+ *                          format: int64
+ *      responses:
+ *          default:
+ *              description: This is the default response for it
+ */
 router.delete("/:id", _delete);
 
 module.exports = router;
